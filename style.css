@@ -65,7 +65,7 @@ html {
 }
 
 .ham {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
   background-color: transparent;
@@ -172,29 +172,6 @@ header .hero .product {
   position: relative;
 }
 
-header .hero .product::after {
-  content: "Top product";
-  color: var(--pure);
-  padding: 2rem;
-  padding-top: 4rem;
-  position: absolute;
-  top: 350px;
-  bottom: 0px;
-  right: 150px;
-  width: 200px;
-  height: 150px;
-  background: var(--dark);
-  border-radius: 4px;
-  transform: scaley(0%);
-  transform-origin: left;
-  transition: all 0.3s ease-in-out;
-}
-
-header .hero .product:hover::after {
-  transform: scaley(100%);
-  transform-origin: right;
-}
-
 header .hero .info {
   padding-bottom: 8rem;
 }
@@ -235,33 +212,6 @@ section.midbar .mid .left p {
   color: var(--secondary);
   padding-bottom: 1.5rem;
   line-height: 1.5;
-}
-
-section.midbar .right {
-  position: relative;
-}
-
-section.midbar .right::after {
-  content: "Top product cream for women";
-  color: var(--pure);
-  padding: 2rem;
-  padding-top: 4rem;
-  position: absolute;
-  top: 200px;
-  bottom: 0px;
-  right: -30px;
-  width: 200px;
-  height: 150px;
-  background: var(--dark);
-  border-radius: 4px;
-  transform: scaley(0);
-  transform-origin: left;
-  transition: all 0.3s ease-in-out;
-}
-
-section.midbar .right:hover::after {
-  transform-origin: right;
-  transform: scaley(100%);
 }
 
 section.feature {
@@ -562,7 +512,7 @@ footer .footbar .copy {
 
 @media (max-width: 414px) {
   .container {
-    max-width: 400px;
+    max-width: 390px;
   }
 
   .ham {
@@ -583,14 +533,16 @@ footer .footbar .copy {
   header .topbar .navbar .links {
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 2rem;
     height: 0px;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
+    transform: translatex(200%);
   }
 
   header .topbar .navbar .active {
     height: auto;
+    transform: translatex(0);
   }
 
   header .topbar .navbar .search {
